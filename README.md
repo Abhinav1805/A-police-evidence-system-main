@@ -1,16 +1,83 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ForenChain: Police Evidence Management System
 
-Currently, two official plugins are available:
+> Full-stack application for secure police evidence management, built with Node.js, Express, MongoDB, React, and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `client/` — Frontend (React + Vite)
+- `server/` — Backend API (Node.js + Express)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prerequisites
+- Node.js (v18+ recommended)
+- npm
+- MongoDB Atlas or local MongoDB instance
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone <repo-url>
+cd A-police-evidence-system-main
+```
+
+### 2. Install dependencies
+```bash
+# Install server dependencies
+cd server
+npm install
+
+# Install client dependencies
+cd ../client
+npm install
+```
+
+### 3. Configure Environment Variables (Server)
+Create a `.env` file in the `server/` folder (see `server/README.md` for details).
+
+### 4. Seed Admin User (Server)
+```bash
+cd ../server
+npm run seed
+```
+
+### 5. Run the Applications
+#### Start Backend (from `server/`):
+```bash
+npm run dev   # for development
+npm start     # for production
+```
+
+#### Start Frontend (from `client/`):
+```bash
+npm run dev
+```
+
+---
+
+## Scripts
+
+### Server
+- `npm run dev` — Start server with nodemon
+- `npm start` — Start server in production
+- `npm run seed` — Seed default admin user
+
+### Client
+- `npm run dev` — Start React app with Vite
+- `npm run build` — Build for production
+- `npm run preview` — Preview production build
+
+---
+
+## API & Features
+See `server/README.md` for full API documentation, endpoints, and user roles.
+
+---
+
+## License
+MIT
